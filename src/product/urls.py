@@ -5,7 +5,7 @@ from product.views.product import CreateProductView, ProductListView, testReact
 from product.views.variant import VariantView, VariantCreateView, VariantEditView
 
 
-from .views.productAPI import product_api, Product_variant_api, ProductAPI
+from .views.productAPI import product_list
 
 from rest_framework.routers import DefaultRouter
 
@@ -23,6 +23,8 @@ urlpatterns = [
     # # Products URLs
     path('create/', CreateProductView.as_view(), name='create.product'),
     path('list/', ProductListView.as_view(), name='list.product'),
-    path('test/', testReact, name='test.product')
+    path('test/', testReact, name='test.product'),
+
+    path('plist', product_list, name='plistapi')
 ]
 
