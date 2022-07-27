@@ -32,9 +32,28 @@ def product_variant_price_list(request):
     queryset = ProductVariantPrice.objects.all()
     serializer = ProductVariantPriceSerializer(queryset, many=True)
     return Response(serializer.data)
-    
+
 @api_view()
 def product_details(request, pk):
     product = get_object_or_404(Product, id=pk)
     serializer = ProductSerializer(product)
+    return Response(serializer.data)
+
+@api_view()
+def variant_detials(request, pk):
+    variant = get_object_or_404(Variant, id=pk)
+    serializer = VarintSerializer(variant)
+    return Response(serializer.data)
+
+@api_view()
+def product_variant_detials(request, pk):
+    product_varinat = get_object_or_404(ProductVariant, id=pk)
+    serialzier = ProductVariantSerializer(product_varinat)
+    return Response(serialzier.data)
+
+
+@api_view()
+def product_variant_price_detials(request, pk):
+    product_variant_price = get_object_or_404(ProductVariantPrice, id=pk)
+    serializer = ProductVariantPriceSerializer(product_variant_price)
     return Response(serializer.data)

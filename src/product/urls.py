@@ -31,7 +31,10 @@ urlpatterns = [
     path('plist', productAPI.product_list, name='plistapi'),
     path('plist/<pk>', productAPI.product_details, name='pdetailstapi'),
     path('pvlist/', productAPI.product_variant_list, name='pvlist'),
+    path('pvlist/<pk>', productAPI.product_variant_detials, name='pvdetailstapi'),
     path('pvplist/', productAPI.product_variant_price_list, name='pvplist'),
+    path('pvplist/<pk>', productAPI.product_variant_price_detials, name='pvpdetailstapi'),
     path('vlist/', productAPI.variant_list, name='vlist'),
+    path('vlist/<pk>', productAPI.variant_detials, name='vdetailstapi'),
 ]
 
