@@ -12,8 +12,7 @@ from rest_framework.routers import DefaultRouter
 
 app_name = "product"
 
-router = DefaultRouter()
-router.register(r'api/class/prodcuts', ProductAPI, basename='apiproducts')
+
 
 urlpatterns = [
     # Variants URLs
@@ -24,15 +23,6 @@ urlpatterns = [
     # # Products URLs
     path('create/', CreateProductView.as_view(), name='create.product'),
     path('list/', ProductListView.as_view(), name='list.product'),
-    path('test/', testReact, name='test.product'),
-
-
-    # path('api/class/prodcuts', ProductAPI.as_view(), name='api.class.products'),
-
-
-
-    path('api/products', product_api, name='api.products'),
-    path('api/productvariants', product_api, name='api.products'),
-    
-]+ router.urls
+    path('test/', testReact, name='test.product')
+]
 
